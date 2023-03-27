@@ -1,6 +1,5 @@
 const express = require('express');
 const dotenv = require('dotenv');
-const colors = require('colors');
 const transactions = require('./routes/transactions');
 const db = require('./config/db');
 
@@ -30,16 +29,6 @@ db.connect(function(err) {
 //         res.end('Database created');
 //     })
 // });
-
-// con.connect(function(err) {
-//     if (err) throw err;
-//     console.log("Connected!");
-//     var sql = "CREATE TABLE customers (name VARCHAR(255), address VARCHAR(255))";
-//     con.query(sql, function (err, result) {
-//       if (err) throw err;
-//       console.log("Table created");
-//     });
-//   });
 
 dotenv.config({path: './config/config.env'}); 
 
