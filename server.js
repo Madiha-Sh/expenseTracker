@@ -1,25 +1,26 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const transactions = require('./routes/transactions');
-const db = require('./config/db');
+// const db = require('./config/db');
+const db = require('./db');
 
 const app = express();
 
-// connection
-db.connect(function(err) {
-    if (err) throw err;
-    console.log("Database connected!");
-    // var sql = "CREATE TABLE transactions (id INT AUTO_INCREMENT PRIMARY KEY, text VARCHAR(255), amount INT)";
-    // db.query(sql, function (err, result) {
-    //   if (err) throw err;
-    //   console.log("Table created");
-    // });
-    // var sql = "DROP TABLE";
-    // db.query(sql, function (err, result) {
-    //   if (err) throw err;
-    //   console.log("Table dropped");
-    // });
-});
+// // connection
+// db.connect(function(err) {
+//     if (err) throw err;
+//     console.log("Database connected!");
+//     // var sql = "CREATE TABLE transactions (id INT AUTO_INCREMENT PRIMARY KEY, text VARCHAR(255), amount INT)";
+//     // db.query(sql, function (err, result) {
+//     //   if (err) throw err;
+//     //   console.log("Table created");
+//     // });
+//     // var sql = "DROP TABLE";
+//     // db.query(sql, function (err, result) {
+//     //   if (err) throw err;
+//     //   console.log("Table dropped");
+//     // });
+// });
 
 // app.get('/createDB', (req, res) => {
 //     const sql = 'CREATE DATABASE expenseTrackerDB';
@@ -30,7 +31,8 @@ db.connect(function(err) {
 //     })
 // });
 
-dotenv.config({path: './config/config.env'}); 
+// dotenv.config({path: './config/config.env'}); 
+dotenv.config({path: '.env'}); 
 
 // it allows us to use body parser - ex, req.body.any_property
 app.use(express.json());
