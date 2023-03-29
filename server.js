@@ -1,8 +1,8 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const transactions = require('./routes/transactions');
-// const db = require('./config/db');
-const db = require('./db');
+const db = require('./config/db');
+const colors = require('colors');
 
 const app = express();
 
@@ -31,7 +31,6 @@ const app = express();
 //     })
 // });
 
-// dotenv.config({path: './config/config.env'}); 
 dotenv.config({path: '.env'}); 
 
 // it allows us to use body parser - ex, req.body.any_property
